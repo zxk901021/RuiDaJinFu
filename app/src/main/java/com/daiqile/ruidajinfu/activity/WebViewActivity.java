@@ -57,28 +57,26 @@ public class WebViewActivity extends BaseActivity {
     @Override
     public void init() {
         mode = getIntent().getIntExtra("mode", -1);
+        title = getIntent().getStringExtra("title");
+        topbar.setTitle(title);
+        topbar.setOnTopbarClickListener(new TopBar.topbarClickListener() {
+            @Override
+            public void leftClick() {
+                finish();
+            }
+
+            @Override
+            public void rightClick() {
+
+            }
+        });
         if (mode == 1) {
             webConfigSetting();
             id = getIntent().getStringExtra("id");
             webView.setWebViewClient(mViewClient);
             webView.loadUrl("http://www.zjrdjr.com/invest/a" + id + ".html");
-            title = getIntent().getStringExtra("title");
-            topbar.setTitle(title);
         } else {
-            title = getIntent().getStringExtra("title");
             content = getIntent().getStringExtra("content");
-            topbar.setOnTopbarClickListener(new TopBar.topbarClickListener() {
-                @Override
-                public void leftClick() {
-                    finish();
-                }
-
-                @Override
-                public void rightClick() {
-
-                }
-            });
-            topbar.setTitle(title);
             WebViewManager manager = new WebViewManager(webView);
             manager.enableAdaptive();
             css = "<style type=\"text/css\"> " +
