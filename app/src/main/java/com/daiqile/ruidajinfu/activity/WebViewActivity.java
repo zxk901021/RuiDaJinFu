@@ -62,6 +62,8 @@ public class WebViewActivity extends BaseActivity {
             id = getIntent().getStringExtra("id");
             webView.setWebViewClient(mViewClient);
             webView.loadUrl("http://www.zjrdjr.com/invest/a" + id + ".html");
+            title = getIntent().getStringExtra("title");
+            topbar.setTitle(title);
         } else {
             title = getIntent().getStringExtra("title");
             content = getIntent().getStringExtra("content");

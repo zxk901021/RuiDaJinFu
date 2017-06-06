@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.util.Log;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -14,7 +12,6 @@ import com.daiqile.ruidajinfu.MyApplication;
 import com.daiqile.ruidajinfu.R;
 import com.daiqile.ruidajinfu.base.BaseActivity;
 import com.daiqile.ruidajinfu.fragment.AccountFragment;
-import com.daiqile.ruidajinfu.fragment.BlankFragment;
 import com.daiqile.ruidajinfu.fragment.IndexFragment;
 import com.daiqile.ruidajinfu.fragment.InvestFragment;
 import com.daiqile.ruidajinfu.fragment.MoreFragment;
