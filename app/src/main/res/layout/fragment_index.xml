@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/all_bg">
+
+   <com.bigkoo.convenientbanner.ConvenientBanner
+        android:id="@+id/convenient_banner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6">
+
+        <com.daiqile.ruidajinfu.view.CircleProgress
+            android:id="@+id/circle_progress"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:id="@+id/tv_time_limit"
+            style="@style/MyTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="48dp"
+            android:background="@drawable/deadline_text_view_background"
+            android:paddingBottom="@dimen/divider_margin_8"
+            android:paddingLeft="48dp"
+            android:paddingRight="48dp"
+            android:paddingTop="@dimen/divider_margin_8"/>
+
+        <TextView
+            android:id="@+id/tv_money_limit"
+            style="@style/MyTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+        <Button
+            android:id="@+id/btn_invest"
+            style="@style/MyButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sheet_height_48"
+            android:layout_gravity="center_vertical"
+            android:text="@string/invest_immediately"/>
+    </LinearLayout>
+
+</LinearLayout>

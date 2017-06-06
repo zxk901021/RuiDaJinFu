@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="MyEditText">
+        <item name="android:textColorHint">@color/material_textWhite_disable</item>
+        <item name="android:textColor">@color/material_textWhite_black</item>
+        <item name="android:textSize">@dimen/small_title_text_size_16</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="MyButton">
+        <item name="android:background">@drawable/background_button</item>
+        <item name="android:textSize">@dimen/main_body_text_size_14</item>
+        <item name="android:textColor">@color/material_textBlack_text</item>
+    </style>
+
+    <style name="MyTextView">
+        <item name="android:textColor">@color/material_textWhite_text</item>
+        <item name="android:textSize">@dimen/main_body_text_size_14</item>
+    </style>
+
+    <style name="MyTextView_16">
+        <item name="android:textColor">@color/material_textWhite_text</item>
+        <item name="android:textSize">@dimen/small_title_text_size_16</item>
+    </style>
+
+</resources>

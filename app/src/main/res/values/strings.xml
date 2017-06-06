@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">瑞达金服</string>
+    <string name="hint_username">手机号码/用户名</string>
+    <string name="hint_password">密码</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="forget_password">忘记密码</string>
+    <string name="hint_phone_number">手机号码</string>
+    <string name="hint_username_register">用户名</string>
+    <string name="hint_set_password">设置密码</string>
+    <string name="hint_validate_number">验证码</string>
+    <string name="get_validate_number">获取验证码</string>
+    <string name="register_agreement">注册就表示您已同意《注册协议》</string>
+    <string name="already_have_account">已有账号？</string>
+    <string name="home_page">首页</string>
+    <string name="invest">投资</string>
+    <string name="account">账户</string>
+    <string name="more">更多</string>
+    <string name="click_again_exit">再按一次退出</string>
+    <string name="invest_immediately">立即投标</string>
+    <string name="platform_dynamic">平台动态</string>
+    <string name="hint_password_again">确认密码</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about">\t\t浙江瑞达金融服务外包有限公司成立于2010年，为全国较早的金融信息服务机构。多年来，瑞达金服致力于线下汽车金融、证券投资等业务。
+        \n\t\t为了响应国家互联网金融监管的需要，更好地服务广大投资人和借款人，融入互联网金融改革发展的大潮，公司旗下互联网信息中介平台瑞达金服重新整合上市！
+        \n\t\t公司产品定位于专业汽车抵押贷款、汽车融资租赁，致力于打造一个有完善风控体系的汽车金融综合服务专业平台，为投资人提供稳健投资收益，为中小微企业及个人提供便捷的融资服务。
+        \n\t\t瑞达金服所有标的均对接车辆抵押（质押），采取落地审核、分部面审、总公司终审的风控原则。公司风控团队均有多年银行和其他金融机构信审工作经历，拥有丰富的抵押物、资产评估经验。
+        \n\t\t六年的深耕蛰伏，就是为了今天的腾飞！瑞达金服愿意与大家一起拥抱互联网金融的春天！
+        \n\t\t瑞达人有信心有能力，砥砺前行，奋勇拼搏，打造一个“金融为先，风控为王”的金融服务平台，为我国的普惠金融事业贡献一份力量！</string>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/all_bg">
+
+    <com.daiqile.ruidajinfu.view.TopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appbar_min_height_56"
+        app:title="瑞达金服"
+        app:titleTextColor="@color/material_textWhite_text"
+        app:titleTextSize="@dimen/appbar_text_size_20"
+        app:rightDrawable="@drawable/shuaxin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"/>
+
+    <com.daiqile.ruidajinfu.view.ViewPagerFix
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <com.ashokvarma.bottomnavigation.BottomNavigationBar
+        android:id="@+id/bottom_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

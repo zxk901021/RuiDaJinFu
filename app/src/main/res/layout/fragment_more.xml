@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/logo"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="安全、透明、便捷、值得投资"
+            android:textSize="16sp"
+            android:textColor="@color/material_yellow_200"
+            android:gravity="center_horizontal"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:id="@+id/ll_intro"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sheet_height_48"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/divider_margin_8"
+            android:paddingRight="@dimen/divider_margin_8"
+            android:layout_marginBottom="@dimen/divider_margin_8"
+            android:background="@color/alpha_black">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/icon120"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="平台简介"
+                style="@style/MyTextView_16"
+                android:layout_marginLeft="@dimen/divider_margin_8"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/icon_next"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_news"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sheet_height_48"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/divider_margin_8"
+            android:paddingRight="@dimen/divider_margin_8"
+            android:layout_marginBottom="@dimen/divider_margin_8"
+            android:background="@color/alpha_black">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/icon_more_help"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新闻资讯"
+                style="@style/MyTextView_16"
+                android:layout_marginLeft="@dimen/divider_margin_8"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/icon_next"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_notices"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sheet_height_48"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/divider_margin_8"
+            android:paddingRight="@dimen/divider_margin_8"
+            android:layout_marginBottom="@dimen/divider_margin_8"
+            android:background="@color/alpha_black">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/icon_more_state"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="网站公告"
+                style="@style/MyTextView_16"
+                android:layout_marginLeft="@dimen/divider_margin_8"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/icon_next"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_question"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sheet_height_48"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/divider_margin_8"
+            android:paddingRight="@dimen/divider_margin_8"
+            android:layout_marginBottom="@dimen/divider_margin_8"
+            android:background="@color/alpha_black">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/icon_question"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="常见问题"
+                style="@style/MyTextView_16"
+                android:layout_marginLeft="@dimen/divider_margin_8"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/icon_next"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sheet_height_48"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/divider_margin_8"
+            android:paddingRight="@dimen/divider_margin_8"
+            android:layout_marginBottom="@dimen/divider_margin_8"
+            android:background="@color/alpha_black">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/icon_more_contact"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="客服热线  400-905-8002"
+                style="@style/MyTextView_16"
+                android:layout_marginLeft="@dimen/divider_margin_8"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_wechat"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sheet_height_48"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/divider_margin_8"
+            android:paddingRight="@dimen/divider_margin_8"
+            android:layout_marginBottom="@dimen/divider_margin_8"
+            android:background="@color/alpha_black">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/icon_more_wechat"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关注微信 ruidajinfu"
+                style="@style/MyTextView_16"
+                android:layout_marginLeft="@dimen/divider_margin_8"
+                android:id="@+id/textView" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

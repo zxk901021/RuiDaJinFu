@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/all_bg">
+
+    <!--<com.jude.easyrecyclerview.EasyRecyclerView-->
+        <!--android:id="@+id/easy_recycler_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:layout_progress="@layout/progress_layout"-->
+        <!--app:layout_empty="@layout/view_empty"/>-->
+
+    <com.daiqile.ruidajinfu.view.TopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appbar_min_height_56"
+        app:leftDrawable="@drawable/icon_prev"
+        app:rightDrawable="@drawable/icon_calculator"
+        app:title="投资详情"
+        app:titleTextSize="@dimen/appbar_text_size_20"
+        app:titleTextColor="@color/material_textWhite_text"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:background="@color/alpha_black">
+
+        <com.daiqile.ruidajinfu.view.CircleProgressTwo
+            android:id="@+id/circle_progress"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_centerInParent="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MyTextView"
+                android:gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:background="@color/alpha_black"
+        android:layout_marginTop="@dimen/divider_margin_8"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/divider_margin_8"
+        android:paddingBottom="@dimen/divider_margin_8">
+
+        <TextView
+            android:id="@+id/tv_left"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="剩余可投：2564.00元"
+            android:gravity="center_vertical"
+            style="@style/MyTextView"/>
+
+        <TextView
+            android:id="@+id/tv_limit"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="投资区间：50元起投"
+            android:gravity="center_vertical"
+            style="@style/MyTextView"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="发布时间：2016-09-09 15:51"
+            style="@style/MyTextView"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="还款方式：按月还款"
+            style="@style/MyTextView"
+            android:gravity="center_vertical"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:showDividers="end|middle"
+        android:divider="@drawable/divider">
+
+        <TextView
+            android:id="@+id/tv_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/MyTextView_16"
+            android:drawableRight="@drawable/icon_next"
+            android:text="项目详情"
+            android:padding="@dimen/divider_margin_8"/>
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_safe"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--style="@style/MyTextView_16"-->
+            <!--android:drawableRight="@drawable/icon_next"-->
+            <!--android:text="安全保障"-->
+            <!--android:padding="@dimen/divider_margin_8"/>-->
+
+        <TextView
+            android:id="@+id/tv_record"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/MyTextView_16"
+            android:drawableRight="@drawable/icon_next"
+            android:text="投资记录"
+            android:padding="@dimen/divider_margin_8"/>
+
+        <TextView
+            android:id="@+id/tv_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/MyTextView_16"
+            android:drawableRight="@drawable/icon_next"
+            android:text="还款详情"
+            android:padding="@dimen/divider_margin_8"/>
+        <TextView
+            android:id="@+id/tv_rule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/MyTextView_16"
+            android:drawableRight="@drawable/icon_next"
+            android:text="借款协议"
+            android:padding="@dimen/divider_margin_8"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+        <Button
+            android:id="@+id/btn_invest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/MyButton"
+            android:text="立即投标"/>
+
+    </LinearLayout>
+
+</LinearLayout>

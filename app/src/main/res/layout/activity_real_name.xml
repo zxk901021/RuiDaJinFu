@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/all_bg"
+    android:orientation="vertical">
+
+
+    <com.daiqile.ruidajinfu.view.TopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appbar_min_height_56"
+        app:leftDrawable="@drawable/icon_prev"
+        app:title="实名认证"
+        app:titleTextColor="@color/material_white"
+        app:titleTextSize="@dimen/appbar_text_size_20" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="真实姓名:"
+                style="@style/MyTextView"/>
+
+            <EditText
+                android:id="@+id/et_realname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="请输入真实姓名"
+                android:paddingLeft="16dp"
+                style="@style/MyEditText"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="身份证号:"
+                style="@style/MyTextView"/>
+
+            <EditText
+                android:id="@+id/et_id_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="请输入身份证号"
+                android:paddingLeft="16dp"
+                style="@style/MyEditText"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="开  户  地:"
+                style="@style/MyTextView"/>
+
+            <TextView
+                android:id="@+id/et_province"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:paddingLeft="2dp"
+                android:text="选择开户地"
+                android:gravity="center"
+                style="@style/MyTextView"/>
+
+            <TextView
+                android:id="@+id/et_city"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:paddingLeft="2dp"
+                android:gravity="center"
+                style="@style/MyTextView"/>
+
+            <TextView
+                android:id="@+id/et_country"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:paddingLeft="2dp"
+                android:gravity="center"
+                style="@style/MyTextView"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_add_card"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="实名认证"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="24dp"
+            style="@style/MyButton"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/all_bg">
+
+    <com.daiqile.ruidajinfu.view.TopBar
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/appbar_min_height_56"
+        app:title="修改交易密码"
+        app:titleTextSize="@dimen/appbar_text_size_20"
+        app:titleTextColor="@color/material_white"
+        app:leftDrawable="@drawable/icon_prev"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:showDividers="middle|end"
+        android:divider="@drawable/divider"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/et_old_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sheet_height_48"
+            android:paddingTop="@dimen/divider_margin_8"
+            android:paddingLeft="@dimen/divider_margin_8"
+            android:drawableLeft="@drawable/icon_input_pwd"
+            android:hint="请输入登录密码"
+            style="@style/MyEditText"
+            android:inputType="textPassword"/>
+
+        <EditText
+            android:id="@+id/et_new_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sheet_height_48"
+            android:paddingTop="@dimen/divider_margin_8"
+            android:paddingLeft="@dimen/divider_margin_8"
+            android:drawableLeft="@drawable/icon_input_pwd"
+            android:hint="请输入新交易密码"
+            style="@style/MyEditText"
+            android:inputType="textPassword"/>
+
+        <EditText
+            android:id="@+id/et_again_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sheet_height_48"
+            android:paddingTop="@dimen/divider_margin_8"
+            android:paddingLeft="@dimen/divider_margin_8"
+            android:drawableLeft="@drawable/icon_input_pwd"
+            android:hint="请再次输入交易密码"
+            style="@style/MyEditText"
+            android:inputType="textPassword"/>
+
+
+    </LinearLayout>
+
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--style="@style/MyTextView"-->
+        <!--android:text="Tip:初始密码为登录密码"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginLeft="16dp"/>-->
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sheet_height_48"
+        android:background="@drawable/background_button"
+        android:text="确认修改"
+        android:layout_margin="@dimen/most_element_margin_16"/>
+
+
+
+</LinearLayout>
