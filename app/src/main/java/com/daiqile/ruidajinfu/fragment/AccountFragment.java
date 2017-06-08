@@ -2,10 +2,14 @@ package com.daiqile.ruidajinfu.fragment;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.daiqile.ruidajinfu.Constants;
@@ -32,6 +37,8 @@ import com.daiqile.ruidajinfu.model.AccountCenter;
 import com.daiqile.ruidajinfu.model.RealStatus;
 import com.daiqile.ruidajinfu.utils.ToastUtil;
 import com.daiqile.ruidajinfu.view.GlideCircleTransform;
+import com.uuzuche.lib_zxing.activity.CaptureActivity;
+import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,6 +51,7 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.drakeet.materialdialog.MaterialDialog;
 import okhttp3.ResponseBody;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -72,8 +80,8 @@ public class AccountFragment extends BaseFragment {
     TextView tvMoneyRecord;
     @BindView(R.id.tv_invest_record)
     TextView tvInvestRecord;
-    @BindView(R.id.tv_red_packet)
-    TextView tvRedPacket;
+//    @BindView(R.id.tv_red_packet)
+//    TextView tvRedPacket;
     @BindView(R.id.tv_bank_card)
     TextView tvBankCard;
     @BindView(R.id.tv_my_recommend)
@@ -90,10 +98,14 @@ public class AccountFragment extends BaseFragment {
     TextView mTvExperienceMoney;
     @BindView(R.id.tv_collection_money)
     TextView mTvCollectionMoney;
+    @BindView(R.id.tv_scan_register)
+    TextView mTvScanRegister;
 
     private Activity mActivity;
     private MyApplication application;
     private DecimalFormat df = new DecimalFormat("0.00");
+
+    private MaterialDialog dialog;
 
     private BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
@@ -160,8 +172,8 @@ public class AccountFragment extends BaseFragment {
         return this;
     }
 
-    @OnClick({R.id.tv_recharge, R.id.tv_withdraw, R.id.tv_money_record, R.id.tv_invest_record, R.id.tv_red_packet, R.id.tv_bank_card, R.id.tv_my_recommend, R.id.tv_safe
-            , R.id.tv_real_name, R.id.rl_user})
+    @OnClick({R.id.tv_recharge, R.id.tv_withdraw, R.id.tv_money_record, R.id.tv_invest_record, R.id.tv_bank_card, R.id.tv_my_recommend, R.id.tv_safe
+            , R.id.tv_real_name, R.id.rl_user, R.id.tv_scan_register})
     public void onClick(View view) {
         if (application.mUser == null) {
             startActivity(new Intent(mActivity, LoginActivity.class));
@@ -233,8 +245,8 @@ public class AccountFragment extends BaseFragment {
                 case R.id.tv_invest_record:
                     startActivity(new Intent(mActivity, InvestRecordActivity.class));
                     break;
-                case R.id.tv_red_packet:
-                    break;
+//                case R.id.tv_red_packet:
+//                    break;
                 case R.id.tv_bank_card:
                     isBind();
                     break;
@@ -256,6 +268,66 @@ public class AccountFragment extends BaseFragment {
                         startActivity(new Intent(mActivity, LoginActivity.class));
                     }
                     break;
+                case R.id.tv_scan_register:
+                    dialog = new MaterialDialog(mActivity)
+                    .setTitle("二维码扫描");
+                    scanFromSDCard();
+
+                    break;
+            }
+        }
+    }
+
+    private void scanFromCamera(){
+        Intent scanRegister = new Intent(mActivity, CaptureActivity.class);
+        startActivityForResult(scanRegister,getActivity().RESULT_FIRST_USER);
+    }
+
+    private void scanFromSDCard(){
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.setType("image/*");
+        startActivityForResult(intent, getActivity().RESULT_FIRST_USER);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        if (data != null){
+//            Bundle bundle = data.getExtras();
+//            String result = bundle.getString("result");
+//            if (!TextUtils.isEmpty(result)){
+//                Intent intent = new Intent(mActivity, RegisterActivity.class);
+//                intent.putExtra("code", result);
+//                startActivity(intent);
+//            }
+//            Intent intent = new Intent(mActivity, RegisterActivity.class);
+//            intent.putExtra("code", "123231");
+//            startActivity(intent);
+//        }
+
+        if (data != null) {
+            Uri uri = data.getData();
+            ContentResolver cr = mActivity.getContentResolver();
+            try {
+                Bitmap mBitmap = MediaStore.Images.Media.getBitmap(cr, uri);
+
+                CodeUtils.analyzeBitmap(mBitmap, new CodeUtils.AnalyzeCallback() {
+                    @Override
+                    public void onAnalyzeSuccess(Bitmap mBitmap, String result) {
+                        Toast.makeText(mActivity, "解析结果:" + result, Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onAnalyzeFailed() {
+                        Toast.makeText(mActivity, "解析二维码失败", Toast.LENGTH_LONG).show();
+                    }
+                });
+
+                if (mBitmap != null) {
+                    mBitmap.recycle();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }

@@ -104,7 +104,18 @@
                 android:layout_gravity="center_vertical"
                 android:textColor="@color/material_yellow_200"
                 android:visibility="invisible"/>
+
         </LinearLayout>
+        <EditText
+            android:id="@+id/recomment_code"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sheet_height_48"
+            android:paddingTop="@dimen/divider_margin_8"
+            android:paddingLeft="@dimen/divider_margin_8"
+            android:drawableLeft="@drawable/icon_input_pwd"
+            android:hint="@string/recommend_code_hint"
+            style="@style/MyEditText"
+            android:inputType="text"/>
     </LinearLayout>
 
     <Button

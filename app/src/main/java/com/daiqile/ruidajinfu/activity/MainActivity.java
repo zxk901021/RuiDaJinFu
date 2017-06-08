@@ -57,7 +57,7 @@ public class MainActivity extends BaseActivity {
         adapter = new MainPagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(adapter);
 
-        topbar.setRightButton(true);
+        topbar.setRightButton(false);
         p = 0;
         //设置底部导航栏
         mBottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED)
@@ -76,7 +76,7 @@ public class MainActivity extends BaseActivity {
             public void onTabSelected(int position) {
                 p = 0;
                 if(position == 0){
-                    topbar.setRightButton(true);
+                    topbar.setRightButton(false);
                 }else {
                     topbar.setRightButton(false);
                 }

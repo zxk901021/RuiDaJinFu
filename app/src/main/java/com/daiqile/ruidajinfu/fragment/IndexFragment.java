@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
@@ -52,6 +53,8 @@ public class IndexFragment extends BaseFragment {
     TextView tvMoneyLimit;
     @BindView(R.id.btn_invest)
     Button btnInvest;
+    @BindView(R.id.index_refresh)
+    SwipeRefreshLayout refreshLayout;
 
     private ArrayList<String> localImages = new ArrayList<>();
     private Activity mActivity;
@@ -73,6 +76,14 @@ public class IndexFragment extends BaseFragment {
         banner();
 //        setBanner();
         loadData();
+
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshLayout.setRefreshing(false);
+                loadData();
+            }
+        });
 
 
     }

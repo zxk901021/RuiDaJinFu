@@ -1,10 +1,10 @@
 package com.daiqile.ruidajinfu.activity;
 
 import android.app.Activity;
-import android.os.Bundle;
+import android.content.Intent;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,10 +27,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import okhttp3.ResponseBody;
-import rx.Scheduler;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -56,12 +54,20 @@ public class RegisterActivity extends BaseActivity {
     EditText etValidateNumber;
     @BindView(R.id.tb_get_validate_number)
     TimeButton tbGetValidateNumber;
+    @BindView(R.id.recomment_code)
+    EditText recommendCode;
+
 
     private Activity mActivity;
     private MyApplication application = null;
 
     @Override
     public void init() {
+        Intent intent = getIntent();
+        String recomCode = intent.getStringExtra("code");
+        if (!TextUtils.isEmpty(recomCode)){
+            recommendCode.setText(recomCode);
+        }
         mActivity = RegisterActivity.this;
         application = (MyApplication) getApplication();
         etPhoneNumber.addTextChangedListener(new TextWatcher() {

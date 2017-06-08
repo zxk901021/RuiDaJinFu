@@ -5,7 +5,6 @@ import android.util.Log;
 import android.webkit.WebView;
 import android.widget.TextView;
 
-import com.daiqile.ruidajinfu.Constants;
 import com.daiqile.ruidajinfu.MyApplication;
 import com.daiqile.ruidajinfu.R;
 import com.daiqile.ruidajinfu.base.BaseActivity;
@@ -111,6 +110,7 @@ public class BorrowDescribeActivity extends BaseActivity {
                             JSONArray array = new JSONArray(responseBody.string());
                             JSONObject object = array.getJSONObject(0);
                             Log.e("tag", object.getString("content"));
+//                            Log.e("tag！！", object.getString("content_img"));
                             webView.loadDataWithBaseURL(null, "<html><header>" + css + "</header><body>" + utilhtml(object.getString("content")) + "</body></html>", "text/html", "UTF-8", null);
                         } catch (JSONException e) {
                             e.printStackTrace();

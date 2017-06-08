@@ -292,22 +292,35 @@
                     android:paddingTop="20dp"
                     android:text="我的推荐" />
 
+
                 <Space
                     android:layout_width="8dp"
                     android:layout_height="match_parent" />
 
                 <TextView
-                    android:id="@+id/tv_red_packet"
+                    android:id="@+id/tv_scan_register"
                     style="@style/MyTextView"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="#aa1a1a26"
-                    android:drawableTop="@drawable/icon_user_safety"
+                    android:drawableTop="@drawable/ic_qr_code"
                     android:gravity="center"
                     android:paddingTop="20dp"
-                    android:text="安全中心"
-                    android:visibility="invisible" />
+                    android:text="扫码注册" />
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_red_packet"-->
+                    <!--style="@style/MyTextView"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="#aa1a1a26"-->
+                    <!--android:drawableTop="@drawable/icon_user_safety"-->
+                    <!--android:gravity="center"-->
+                    <!--android:paddingTop="20dp"-->
+                    <!--android:text="安全中心"-->
+                    <!--android:visibility="gone" />-->
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
