@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/all_bg">
 
-    <com.daiqile.ruidajinfu.view.TopBar
+    <com.daiqile.test.view.TopBar
         android:id="@+id/topbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/appbar_min_height_56"
@@ -28,7 +28,7 @@
             android:layout_weight="5"
             android:background="@color/alpha_black">
 
-            <com.daiqile.ruidajinfu.view.CircleProgressTwo
+            <com.daiqile.test.view.CircleProgressTwo
                 android:id="@+id/circle_progress"
                 android:layout_width="140dp"
                 android:layout_height="140dp"
@@ -123,6 +123,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/direction_password"
         android:layout_width="match_parent"
         android:layout_height="@dimen/appbar_min_height_56"
         android:orientation="horizontal"
@@ -135,7 +136,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="交易密码："
+            android:text="定向标密码："
             style="@style/MyTextView"/>
 
         <EditText

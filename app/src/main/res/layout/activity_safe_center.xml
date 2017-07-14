@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/all_bg">
 
-    <com.daiqile.ruidajinfu.view.TopBar
+    <com.daiqile.test.view.TopBar
         android:id="@+id/topbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/appbar_min_height_56"
@@ -18,113 +18,151 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:background="@color/alpha_black"
-        android:layout_marginTop="@dimen/activity_vertical_margin">
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/ll_change_login_pwd"
             android:layout_width="match_parent"
             android:layout_height="@dimen/appbar_min_height_56"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:gravity="center_vertical">
+            android:paddingRight="@dimen/activity_horizontal_margin">
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/icon_safety_pwd"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/icon_safety_pwd" />
 
             <TextView
+                style="@style/MyTextView_16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="修改登录密码"
-                style="@style/MyTextView_16"/>
+                android:text="修改登录密码" />
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icon_next"/>
+                android:src="@drawable/icon_next" />
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/divider"
-            android:layout_marginLeft="72dp"/>
+            android:layout_marginLeft="72dp"
+            android:background="@drawable/divider" />
 
         <LinearLayout
             android:id="@+id/ll_change_pay_pwd"
             android:layout_width="match_parent"
             android:layout_height="@dimen/appbar_min_height_56"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:gravity="center_vertical">
+            android:paddingRight="@dimen/activity_horizontal_margin">
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/icon_safety_deal_pwd"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/icon_safety_deal_pwd" />
 
             <TextView
+                style="@style/MyTextView_16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="修改支付密码"
-                style="@style/MyTextView_16"/>
+                android:text="修改交易密码" />
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icon_next"/>
+                android:src="@drawable/icon_next" />
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@drawable/divider"
             android:layout_marginLeft="72dp"
-            android:visibility="gone"/>
+            android:background="@drawable/divider" />
+
+        <LinearLayout
+            android:id="@+id/ll_reset_pay_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/appbar_min_height_56"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/icon_safety_deal_pwd" />
+
+            <TextView
+                style="@style/MyTextView_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="重置交易密码" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_next" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="72dp"
+            android:background="@drawable/divider"
+            android:visibility="gone" />
 
         <LinearLayout
             android:id="@+id/ll_set_pwd"
             android:layout_width="match_parent"
             android:layout_height="@dimen/appbar_min_height_56"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
-            android:gravity="center_vertical"
             android:visibility="gone">
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/icon_safety_sign_pwd"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/icon_safety_sign_pwd" />
 
             <TextView
+                style="@style/MyTextView_16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="设置手势密码"
-                style="@style/MyTextView_16"/>
+                android:text="设置手势密码" />
 
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <Switch
                 android:layout_width="wrap_content"
@@ -249,7 +287,8 @@
                 android:id="@+id/tv_yimadai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/MyTextView_16"/>
+                style="@style/MyTextView_16"
+                android:text="金城银行"/>
 
         </LinearLayout>
     </LinearLayout>

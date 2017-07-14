@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/all_bg">
 
-    <com.daiqile.ruidajinfu.view.TopBar
+    <com.daiqile.test.view.TopBar
         android:id="@+id/topbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/appbar_min_height_56"
@@ -26,7 +26,8 @@
             android:layout_height="40dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="8dp"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -56,7 +57,8 @@
             android:layout_height="40dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="8dp"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -94,6 +96,7 @@
                 style="@style/MyTextView"/>
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -106,7 +109,8 @@
                 android:layout_marginLeft="8dp"
                 android:text="银行卡号:"
                 style="@style/MyTextView"
-                android:id="@+id/textView2" />
+                android:id="@+id/textView2"
+                android:minEms="6"/>
 
             <EditText
                 android:id="@+id/et_card_number"
@@ -118,19 +122,125 @@
                 android:paddingLeft="16dp"
                 style="@style/MyEditText"/>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="银行预留手机号:"
+                style="@style/MyTextView"
+                android:id="@+id/textView5"
+                android:minEms="6"/>
+
+            <EditText
+                android:id="@+id/ed_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:inputType="number"
+                android:paddingLeft="16dp"
+                style="@style/MyEditText"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="姓名:"
+                style="@style/MyTextView"
+                android:id="@+id/textView6"
+                android:minEms="6"/>
+
+            <EditText
+                android:id="@+id/ed_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:paddingLeft="16dp"
+                android:enabled="false"
+                style="@style/MyEditText"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="身份证号:"
+                style="@style/MyTextView"
+                android:id="@+id/textView7"
+                android:minEms="6"/>
+
+            <EditText
+                android:id="@+id/ed_id_number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:paddingLeft="16dp"
+                android:inputType="number|text"
+                android:digits="0123456789xy"
+                android:enabled="false"
+                style="@style/MyEditText"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="手机验证码:"
+                style="@style/MyTextView"
+                android:id="@+id/textView8"
+                android:minEms="6"/>
+
+            <EditText
+                android:id="@+id/ed_verify_code"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:paddingLeft="16dp"
+                android:inputType="number"
+                style="@style/MyEditText"/>
+
+            <Button
+                android:id="@+id/send_verify_code"
+                style="@style/MyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发送验证码"
+                android:layout_margin="5dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:text="银行分行:"
-                style="@style/MyTextView"/>
+                style="@style/MyTextView"
+                android:minEms="6"/>
 
             <EditText
                 android:id="@+id/et_branch"
@@ -148,11 +258,12 @@
             android:id="@+id/btn_add_card"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="添加银行卡"
+            android:text="确定绑定银行卡"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="24dp"
-            style="@style/MyButton"/>
+            style="@style/MyButton2"
+            android:enabled="false"/>
     </LinearLayout>
 
 </LinearLayout>

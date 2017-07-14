@@ -26,23 +26,32 @@
         android:textColor="@color/material_yellow_200"
         android:gravity="center_horizontal"/>
 
+    <ImageView
+        android:id="@+id/register_progress"
+        android:src="@drawable/register_progress_1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"/>
+
+    <com.daiqile.test.view.NoScrollViewPager
+        android:id="@+id/register_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_weight="1">
+
+    </com.daiqile.test.view.NoScrollViewPager>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:showDividers="middle|end"
         android:divider="@drawable/divider"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="50dp"
+        android:visibility="gone">
 
-        <EditText
-            android:id="@+id/et_username"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/sheet_height_48"
-            android:paddingTop="@dimen/divider_margin_8"
-            android:paddingLeft="@dimen/divider_margin_8"
-            android:drawableLeft="@drawable/icon_input_user"
-            android:hint="@string/hint_username_register"
-            style="@style/MyEditText"/>
 
         <EditText
             android:id="@+id/et_phone_number"
@@ -67,46 +76,6 @@
             android:inputType="textPassword"/>
 
         <EditText
-            android:id="@+id/et_password_again"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/sheet_height_48"
-            android:paddingTop="@dimen/divider_margin_8"
-            android:paddingLeft="@dimen/divider_margin_8"
-            android:drawableLeft="@drawable/icon_input_pwd"
-            android:hint="@string/hint_password_again"
-            style="@style/MyEditText"
-            android:inputType="textPassword"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/sheet_height_48"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/et_validate_number"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="@dimen/sheet_height_48"
-                android:paddingTop="@dimen/divider_margin_8"
-                android:paddingLeft="@dimen/divider_margin_8"
-                android:drawableLeft="@drawable/icon_input_vali"
-                android:hint="@string/hint_validate_number"
-                style="@style/MyEditText"
-                android:inputType="number"/>
-
-            <com.daiqile.ruidajinfu.view.TimeButton
-                android:id="@+id/tb_get_validate_number"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/get_validate_number"
-                android:textSize="@dimen/main_body_text_size_14"
-                android:background="@null"
-                android:layout_gravity="center_vertical"
-                android:textColor="@color/material_yellow_200"
-                android:visibility="invisible"/>
-
-        </LinearLayout>
-        <EditText
             android:id="@+id/recomment_code"
             android:layout_width="match_parent"
             android:layout_height="@dimen/sheet_height_48"
@@ -123,8 +92,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/sheet_height_48"
         android:background="@drawable/background_button"
-        android:text="@string/register"
-        android:layout_marginTop="@dimen/sheet_height_48"/>
+        android:text="@string/next_step"
+        android:layout_marginTop="20dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"

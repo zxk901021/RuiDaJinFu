@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/all_bg">
 
-    <com.daiqile.ruidajinfu.view.TopBar
+    <com.daiqile.test.view.TopBar
         android:id="@+id/topbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/appbar_min_height_56"

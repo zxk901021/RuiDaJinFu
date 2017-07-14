@@ -13,7 +13,7 @@
         <!--app:layout_progress="@layout/progress_layout"-->
         <!--app:layout_empty="@layout/view_empty"/>-->
 
-    <com.daiqile.ruidajinfu.view.TopBar
+    <com.daiqile.test.view.TopBar
         android:id="@+id/topbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/appbar_min_height_56"
@@ -29,7 +29,7 @@
         android:layout_weight="5"
         android:background="@color/alpha_black">
 
-        <com.daiqile.ruidajinfu.view.CircleProgressTwo
+        <com.daiqile.test.view.CircleProgressTwo
             android:id="@+id/circle_progress"
             android:layout_width="140dp"
             android:layout_height="140dp"

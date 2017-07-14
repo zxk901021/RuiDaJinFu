@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@drawable/all_bg">
 
-    <com.daiqile.ruidajinfu.view.TopBar
+    <com.daiqile.test.view.TopBar
         android:id="@+id/topbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/appbar_min_height_56"
@@ -17,7 +17,7 @@
         app:rightDrawable="@drawable/shuaxin"
         android:paddingLeft="@dimen/activity_horizontal_margin"/>
 
-    <com.daiqile.ruidajinfu.view.ViewPagerFix
+    <com.daiqile.test.view.ViewPagerFix
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"

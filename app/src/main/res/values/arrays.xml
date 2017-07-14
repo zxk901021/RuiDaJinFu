@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array  name="scan_method">
+        <item>直接扫描</item>
+        <item>扫描本地图片</item>
+    </string-array>
+</resources>

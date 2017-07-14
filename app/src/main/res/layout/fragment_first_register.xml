@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="top">
+
+        <EditText
+            android:id="@+id/et_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sheet_height_48"
+            android:paddingTop="@dimen/divider_margin_8"
+            android:paddingLeft="@dimen/divider_margin_8"
+            android:drawableLeft="@drawable/user_phone"
+            android:hint="@string/hint_phone_number"
+            android:inputType="phone"
+            style="@style/MyEditText"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sheet_height_48">
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="@dimen/divider_margin_8"
+                    android:paddingLeft="@dimen/divider_margin_8"
+                    android:drawableLeft="@drawable/user_password"
+                    android:hint="@string/hint_set_password"
+                    style="@style/MyEditText"
+                    android:layout_toLeftOf="@+id/password_visiable"/>
+                <ImageView
+                    android:id="@+id/password_visiable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/password_visiable"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="@dimen/divider_margin_8"
+                    android:paddingLeft="4dp"/>
+        </RelativeLayout>
+
+
+
+        <EditText
+            android:id="@+id/recomment_code"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sheet_height_48"
+            android:paddingTop="@dimen/divider_margin_8"
+            android:paddingLeft="@dimen/divider_margin_8"
+            android:drawableLeft="@drawable/invite_person"
+            android:hint="@string/recommend_code_hint"
+            style="@style/MyEditText"
+            android:inputType="text"/>
+
+</LinearLayout>

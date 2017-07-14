@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="top">
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sheet_height_48"
+        android:paddingTop="@dimen/divider_margin_8"
+        android:paddingLeft="@dimen/divider_margin_8"
+        android:drawableLeft="@drawable/user_name"
+        android:hint="姓名"
+        style="@style/MyEditText"/>
+
+    <EditText
+        android:id="@+id/et_id_card"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sheet_height_48"
+        android:paddingTop="@dimen/divider_margin_8"
+        android:paddingLeft="@dimen/divider_margin_8"
+        android:drawableLeft="@drawable/id_card"
+        android:hint="身份证号"
+        style="@style/MyEditText"
+        android:inputType="number|text"
+        android:digits="0123456789xy"/>
+
+</LinearLayout>

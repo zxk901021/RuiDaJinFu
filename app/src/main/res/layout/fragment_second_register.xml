@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="top">
+
+    <EditText
+        android:id="@+id/et_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sheet_height_48"
+        android:paddingTop="@dimen/divider_margin_8"
+        android:paddingLeft="@dimen/divider_margin_8"
+        android:drawableLeft="@drawable/user_phone"
+        android:hint="@string/hint_phone_number"
+        android:inputType="phone"
+        android:enabled="false"
+        style="@style/MyEditText"/>
+
+    <EditText
+        android:id="@+id/et_verificationCode"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sheet_height_48"
+        android:paddingTop="@dimen/divider_margin_8"
+        android:paddingLeft="@dimen/divider_margin_8"
+        android:drawableLeft="@drawable/verify_code"
+        android:hint="@string/hint_validate_number"
+        style="@style/MyEditText"
+        android:inputType="number"/>
+
+</LinearLayout>
