@@ -496,13 +496,13 @@ public class BindCardActivity extends BaseActivity {
                     try {
                         JSONObject object = new JSONObject(resultStr);
                         if (object.getString("status").equals("1")){
-                            Toast.makeText(mActivity, "验证码发送成功！", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mActivity, object.getString("message"), Toast.LENGTH_SHORT).show();
                             tranceNum = object.getString("tranceNum");
                             bankName = object.getString("bankName");
                             bankCode = object.getString("bankCode");
                             cardType = object.getString("cardType");
                         }else {
-                            Toast.makeText(mActivity, "银行卡号格式不正确！", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mActivity, object.getString("message"), Toast.LENGTH_SHORT).show();
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
