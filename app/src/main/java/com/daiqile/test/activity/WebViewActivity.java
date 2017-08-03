@@ -101,7 +101,11 @@ public class WebViewActivity extends BaseActivity {
             webConfigSetting();
             webView.setWebViewClient(mViewClient);
             webView.loadUrl(url);
-        } else {
+        } else if (mode == 100){
+            webConfigSetting();
+            webView.setWebViewClient(mViewClient);
+            webView.loadUrl(url);
+        }else {
             content = getIntent().getStringExtra("content");
             WebViewManager manager = new WebViewManager(webView);
             manager.enableAdaptive();

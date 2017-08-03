@@ -120,6 +120,7 @@ public class LoginActivity extends BaseActivity {
 
                     @Override
                     public void onError(Throwable e) {
+                        e.getMessage();
                     }
 
                     @Override

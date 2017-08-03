@@ -127,6 +127,30 @@
             android:layout_height="40dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="支付行号:"
+                style="@style/MyTextView"
+                android:id="@+id/bank_number"
+                android:minEms="6"/>
+
+            <EditText
+                android:id="@+id/et_bank_number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="选填"
+                android:paddingLeft="16dp"
+                style="@style/MyEditText"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -264,6 +288,20 @@
             android:layout_marginTop="24dp"
             style="@style/MyButton2"
             android:enabled="false"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/material_white"
+            android:textSize="10sp"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:padding="5dp"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -7,8 +7,12 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
+import android.text.SpannableString;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -23,7 +27,6 @@ import com.daiqile.test.R;
 import com.daiqile.test.base.BaseActivity;
 import com.daiqile.test.http.HttpPostUtil;
 import com.daiqile.test.model.BankCardBean;
-import com.daiqile.test.model.BindResult;
 import com.daiqile.test.model.City;
 import com.daiqile.test.model.Country;
 import com.daiqile.test.model.Province;
@@ -83,6 +86,10 @@ public class BindCardActivity extends BaseActivity {
     EditText verifyCode;
     @BindView(R.id.send_verify_code)
     Button sendVerify;
+    @BindView(R.id.et_bank_number)
+    EditText bankNumberEd;
+    @BindView(R.id.tips)
+    TextView tips;
 
     private Activity mActivity;
     private MyApplication application;
@@ -119,6 +126,10 @@ public class BindCardActivity extends BaseActivity {
     private String bankCode;
     private String cardType;
     private String account;
+    private String phone;
+    private String tipsStr = "除以下银行外（工商银行、农业银行、中国银行、建设银行、中信银行、光大银行、华夏银行、平安银行、招商银行、兴业银行、浦发银行、邮储银行、宁波银行、南京银行），需要填写支付行号，获取支付行号请点击查看";
+    private String bankNumber;
+    private String bindCardResult;
 
     @Override
     public void init() {
@@ -128,6 +139,19 @@ public class BindCardActivity extends BaseActivity {
         cityOptions = new OptionsPickerView(mActivity);
         countryOptions = new OptionsPickerView(mActivity);
         bankOptions = new OptionsPickerView(mActivity);
+        SpannableString ss = new SpannableString(tipsStr);
+        ss.setSpan(new ClickableSpan() {
+            @Override
+            public void onClick(View widget) {
+                Intent intent = new Intent(BindCardActivity.this, WebViewActivity.class);
+                intent.putExtra("mode", 100);
+                intent.putExtra("title", "支付行号");
+                intent.putExtra("url", "https://m.so.com/index.php?a=newTranscode&u=http%3A%2F%2Fwww.tui78.com%2Fbank%2F&m=d390f4d2c51cb5ea376a8a323eb668da39c48d25&q=%E6%94%AF%E4%BB%98%E8%A1%8C%E5%8F%B7%E6%9F%A5%E8%AF%A2&sid=d2432d96fd09e5f77c150f3e91b70687");
+                startActivity(intent);
+            }
+        }, tipsStr.length() - 4, tipsStr.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        tips.setText(ss);
+        tips.setMovementMethod(LinkMovementMethod.getInstance());
 
         etCity.setVisibility(View.INVISIBLE);
         etCountry.setVisibility(View.INVISIBLE);
@@ -244,7 +268,11 @@ public class BindCardActivity extends BaseActivity {
             ToastUtil.showToast(mActivity, "手机号码不能为空");
             return;
         }
-        Map<String, String> params = new HashMap<>();
+        final Map<String, String> params = new HashMap<>();
+        bankNumber = bankNumberEd.getText().toString();
+        if (!TextUtils.isEmpty(bankNumber)){
+         params.put("unionBank", bankNumber);
+        }
         params.put("dcode", Constants.DCODE);
         params.put("user_id", String.valueOf(application.mUser.getId()));
         params.put("tranceNum", tranceNum);
@@ -254,33 +282,45 @@ public class BindCardActivity extends BaseActivity {
         params.put("verificationCode", verifyCodes);
         params.put("account", account);
         params.put("phone", phoneStr);
-        application.apiService.bindBankCard(params)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<BindResult>() {
-                    @Override
-                    public void onCompleted() {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        int i = 1;
-                        i++;
-                        String error = e.getMessage();
-                        Log.e("error", error);
-                    }
-
-                    @Override
-                    public void onNext(BindResult bindResult) {
-                        if (bindResult.getStatus().equals("1")){
-                            ToastUtil.showToast(mActivity, "银行卡绑定成功");
-                            Intent intent = new Intent(mActivity, BankCardActivity.class);
-                            startActivity(intent);
-                            finish();
-                        }else ToastUtil.showToast(mActivity, "银行卡绑定失败");
-                    }
-                });
+        Thread th = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    bindCardResult = HttpPostUtil.bindCard(params);
+                    handler.sendEmptyMessage(3);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                }
+            }
+        });
+        th.start();
+//        application.apiService.bindBankCard(params)
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new Subscriber<BindResult>() {
+//                    @Override
+//                    public void onCompleted() {
+//
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//                        int i = 1;
+//                        i++;
+//                        String error = e.getMessage();
+//                        Log.e("error", error);
+//                    }
+//
+//                    @Override
+//                    public void onNext(BindResult bindResult) {
+//                        if (bindResult.getStatus().equals("1")){
+//                            ToastUtil.showToast(mActivity, "银行卡绑定成功");
+//                            Intent intent = new Intent(mActivity, BankCardActivity.class);
+//                            startActivity(intent);
+//                            finish();
+//                        }else ToastUtil.showToast(mActivity, "银行卡绑定失败");
+//                    }
+//                });
 
     }
 
@@ -484,6 +524,7 @@ public class BindCardActivity extends BaseActivity {
                             JSONObject object = new JSONObject(result);
                             if (object!= null){
                                 edPhone.setText(object.getString("phone"));
+                                phone = object.getString("phone");
                                 edName.setText(object.getString("realname"));
                                 idNumber.setText(object.getString("card_id"));
                             }
@@ -508,6 +549,21 @@ public class BindCardActivity extends BaseActivity {
                         e.printStackTrace();
                     }
                     break;
+                case 3:
+                    try {
+                        JSONObject object = new JSONObject(bindCardResult);
+                        if (object.getString("status").equals("1")){
+                            Toast.makeText(mActivity, object.getString("message"), Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(mActivity, BankCardActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }else {
+                            Toast.makeText(mActivity, object.getString("message"), Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    break;
 
             }
         }
@@ -515,6 +571,10 @@ public class BindCardActivity extends BaseActivity {
 
     private void sendVerifyCode(){
         account = etCardNumber.getText().toString().trim();
+        bankNumber = bankNumberEd.getText().toString();
+        if (TextUtils.isEmpty(bankNumber)){
+            bankNumber = "";
+        }
         if (account.isEmpty()) {
             ToastUtil.showToast(mActivity, "请输入银行账号");
             return;
@@ -523,7 +583,7 @@ public class BindCardActivity extends BaseActivity {
             @Override
             public void run() {
                 try {
-                    resultStr = HttpPostUtil.requestVerify(String.valueOf(application.mUser.getId()), account);
+                    resultStr = HttpPostUtil.requestVerify(String.valueOf(application.mUser.getId()), account, phone, bankNumber);
                     handler.sendEmptyMessage(2);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
